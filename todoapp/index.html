@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .todo-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .todo-list li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .todo-list li:last-child {
+            border-bottom: none;
+        }
+        .todo-list li.completed {
+            text-decoration: line-through;
+            color: #999;
+        }
+        .add-todo {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+        .add-todo:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>To-Do App</h1>
+        <input type="text" id="todo-input" placeholder="Add new todo">
+        <button class="add-todo" id="add-todo-btn">Add</button>
+        <ul class="todo-list" id="todo-list">
+            <!-- todo items will be rendered here -->
+        </ul>
+    </div>
+
+    <script>
+        const todoInput = document.getElementById('todo-input');
+        const addTodoBtn = document.getElementById('add-todo-btn');
+        const todoList = document.getElementById('todo-list');
+
+        let todos = [];
+
+        addTodoBtn.addEventListener('click', () => {
+            const todoText = todoInput.value.trim();
+            if (todoText) {
+                todos.push({ text: todoText, completed: false });
+                renderTodos();
+                todoInput.value = '';
+            }
+        });
+
+        todoList.addEventListener('click', (e) => {
+            if (e.target.tagName === 'LI') {
+                const todoIndex = Array.prototype.indexOf.call(todoList.children, e.target);
+                todos[todoIndex].completed = !todos[todoIndex].completed;
+                renderTodos();
+            }
+        });
+
+        function renderTodos() {
+            todoList.innerHTML = '';
+            todos.forEach((todo, index) => {
+                const todoItem = document.createElement('LI');
+                todoItem.textContent = todo.text;
+                if (todo.completed) {
+                    todoItem.classList.add('completed');
+                }
+                todoList.appendChild(todoItem);
+            });
+        }
+    </script>
+</body>
+</html>
