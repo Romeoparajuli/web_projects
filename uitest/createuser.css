@@ -1,0 +1,74 @@
+/* White background */
+body {
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+    background-color: #3E8E41;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Container */
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form group */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Form control */
+.form-control {
+    width: 100%;
+    height: 30px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Form control focus */
+.form-control:focus {
+    border-color: #3E8E41;
+    box-shadow: 0 0 10px rgba(62, 142, 65, 0.5);
+}
+
+/* Button create */
+.btn-create {
+    background-color: #3E8E41;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Button create hover */
+.btn-create:hover {
+    background-color: #2E6C31;
+}
+
+/* Back arrow */
+.back-arrow {
+    position: absolute;
+   
+}
+   
+    #education {
+        height: 40px;
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
